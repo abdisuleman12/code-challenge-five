@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Messages </title>
+    <script type="text/javascript" src="/vendors/angular.min.js"></script>
+    <script type="text/javascript" src="/vendors/angular-route.js"></script>
+    <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/messages.controller.js"></script>
+    <script type="text/javascript" src="/scripts/services/messages.service.js"></script>
+    <link rel="stylesheet" href="/vendors/bootstrap.min.css" />
+</head>
+
+<body ng-app="myApp" ng-controller="MessagesController as vm">
+    <h1> Messages App </h1>
+
+    <div class="row">
+        <div class="col-md-12">
+            <form>
+                <label>Name:</label>
+                <input type="text" ng-model="vm.newMessage.name" placeholder="Name" />
+                <label>Message : </label>
+                <input type="text" ng-model="vm.newMessage.message" placeholder="Message" />
+                <button class="btn btn-primary" ng-click="vm.addMessage()">Send Message</button>
+            </form>
+        </div>
+    </div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th> Name </th>
+                <th> Message </th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr ng-repeat="messages in vm.messages.list">
+                <td>{{messages.name}}</td>
+                <td>{{messages.message}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+    </div>
+
+</body>
+
+
+</html>
