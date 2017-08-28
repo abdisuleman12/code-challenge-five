@@ -4,6 +4,8 @@ myApp.controller('MessagesController', ['MessagesService',  function (MessagesSe
 
     self.newMessage = {};
 
+    MessagesService.getMessages();
+
     self.messages = MessagesService.messages
 
     
